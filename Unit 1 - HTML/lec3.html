@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <p>Click the button to do a global(b), multiline(m), case sensitive(i) search for "is" at the beginning of each line in a string</p>
+    <button onclick="myFunction()">Submit</button>
+
+    <p id="strdisp">Input String is:</p>
+    <p id="demo">Regular Expression is: </p>
+
+    <script>
+        function myFunction()
+        {
+            var str = "\nIs th\nis h\nis";
+            document.getElementById("strdisp").innerHTML +=str;
+            var patt1 = /is/gim;
+            var result1= str.match(patt1);
+            document.getElementById("demo").innerHTML +=result;
+        }
+    </script> -->
+
+    <!-- <p>Click the button to do a global search for characters that are NOT "i" and "s" in a string</p>
+    
+    <button onclick="myFunction()">Try</button>
+
+    <p id="demo">Regular Expression is: </p>
+
+    <script>
+        function myFunction()
+        {
+            var str = "Doyouknowifthereisallthereis?";
+            var patt1 = /[^is]/gi;
+            var result1= str.match(patt1);
+            document.getElementById("demo").innerHTML += result;
+        }
+    </script> -->
+    
+    <p>Click the button to do a global search for characters for digits in a string</p>
+    
+    <button onclick="myFunction()">Try It </button>
+
+    <p id="strdisp">Input String is: </p>
+    <p id="demo">Regular Expression Result: </p>
+
+
+    <script type="text/javascript">
+        function myFunction()
+        {
+            var str = "Give100%!";
+            document.getElementById("strdisp").innerHTML += str;
+            var pat1 = /\d/g;
+            var result1= str.match(pat1);
+            document.getElementById("demo").innerHTML += result1;
+        }
+
+    </script>
+</body>
+</html>

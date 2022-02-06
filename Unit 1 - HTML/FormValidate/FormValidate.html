@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+  	<link rel="stylesheet" href="fv.css" type="text/css" />
+</head>
+<body>
+	<div id='wrap'>
+		<img src="nmims.png" alt="NMIMS Logo" width="400px">
+		<br>
+		<br>
+		<h1 title='register'>Registration Form</h1>
+		<div class="field">
+			<span>Already Registered?</span> 
+			<a href="Login.html">Login</a>
+		  </div>
+		  <br>
+		  <br>
+		<section class='form'>
+			<form action="form.php" method="GET" onsubmit="validateform()">
+				<fieldset>
+					<div class="field">
+						<label>
+							<span>First Name</span>
+							<!-- data-validate-length-range="30" data-validate-words="20"  -->
+							<input data-validate-words="1" name="fname" placeholder="ex. John" required="required" />
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>First Name must be at least 1 words</p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>Last Name</span>
+							<!-- data-validate-length-range="30" data-validate-words="20"  -->
+							<input data-validate-words="1" name="lname" placeholder="ex. Doe" required="required" />
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Last Name must be at least 1 words</p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>Gender</span>
+							<input class='optional' name="gender" type="text"/>
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Only Enter Male or M or Female or F<br /><em>Minimum 1 chars, maximum 6</em></p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>Email</span>
+							<input type="Email" name="Email" required>
+							<!-- <input name="email" type="text" placeholder="ex. johndoe@example.com"> -->
+						</label>
+						</div>
+					<!-- <div class="field">
+						<label>
+							<span>Password</span>
+							 data-validate-linked='email' 
+							<input type="password" class='email' name="password" required='required'>
+						</label>
+					</div> -->
+					<div class="field">
+						<label>
+							<span>Mobile Number</span>
+							<!-- data-validate-minmax="10,100" -->
+							<input type="number" class='number' name="number" required='required'>
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Mobile number must be of 10 digits without code +91</p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>Date of Birth</span>
+							<input class='date' type="date" name="date" required='required'>
+						</label>
+					</div>
+					<div class="field">
+						<label>
+							<span>Password</span>
+							<input type="password" name="password" required='required'>
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Should be of length 6 OR 8 characters</p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>Repeat password</span>
+							<input type="password" name="password2" data-validate-linked='password' required='required'>
+						</label>
+					</div>
+					<div class="field">
+						<label>
+							<span>Telephone No.</span>
+							<input type="tel" class='tel' name="phone" required='required' data-validate-length-range="8,20">
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>for a phone number user can input a '+' sign, a dash '-' or a space ' '</p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>Program</span>
+							<select required name="dropdown">
+								<option value="">-- please select --</option>
+								<option value="o1">BTECH</option>
+								<option value="o2">MBATECH</option>
+								<option value="o3">BSC</option>
+								<option value="o4">BBA</option>
+								<option value="o5">MBA</option>
+							</select>
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Select the program enrolled in</p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>url</span>
+							<input name="url" placeholder="http://www.website.com" required="required" type="url" />
+						</label>
+					</div>
+
+					<div class="field">
+						<label>
+							<span>Do you agree?</span>
+							<input required="required" type="checkbox" />
+							<span>I agree</span>
+						</label>
+					</div>
+
+					<div class="field">
+					</div>
+					<div class="field">
+						<label>
+							<span>any comments?</span>
+							<textarea required="required" name='message'></textarea>
+						</label>
+					</div>
+				</fieldset>
+				<button type='submit'>Submit</button>
+                <button type='reset'>Reset</button>
+			</form>
+		</section>
+	</div>
+
+
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="multifield.js"></script>
+    <script src="validator.js"></script>
+	<script>
+		
+		var validate = new FormValidator({"events" : ['blur', 'paste', 'change']}, document.forms[0]);
+
+		validate.texts.mySpecialInput = "Wrong Input" 
+
+       
+		// document.forms[0].onsubmit = function(e){
+		// 	var submit = true,
+		// 			ValidateResult = validate.checkAll(this);
+
+		// 	console.log(ValidateResult);
+		// 	return !!ValidateResult.valid;
+		// }
+
+		
+		document.forms[0].onreset = function(e)
+		{
+				validate.reset();
+		}
+
+        
+		$('.toggleValidationTooltips').change(function()
+		{
+
+			validate.settings.alerts = !this.checked;
+
+			if( this.checked )
+				$('form .alert').remove();
+
+		}).prop('checked',false);
+
+	</script>
+</body>
+</html>

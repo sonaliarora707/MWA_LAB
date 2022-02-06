@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Programs</title>
+</head>
+<body style="font-family: 'Courier New', Courier, monospace;">
+    <!-- <button onclick="document.getElementById('d1').innerHTML = Date();">< Date </button>
+    <p id="d1"></p>
+    
+    <button onmouseover="display()" onmouseout="displayout()">Try it</button>
+
+    <p id="d2"></p>
+    <script>
+        function display()
+        {
+            document.getElementById('d2').innerHTML = "mouse over";
+        }
+
+        function displayout()
+        {
+            document.getElementById('d2').innerHTML = "mouse out";
+        }
+    </script> -->
+    <!-- <p>A function is triggered when the user is pressing a key in input field</p>
+    <input type="text" onkeydown="myFunction()">
+    
+    
+    <script>
+        function myFunction()
+        {
+            alert("You pressed a key inside the input field!");
+        }
+    </script> -->
+
+    <!-- <p>This example uses HTML DOm to assign an "onkeypress" event to an input element</p>
+    
+    <p>Press a key inside the text field to set the background colour.</p>
+
+    <input type="text" id="demo">
+    
+    
+    <script>
+        document.getElementById("demo")
+    </script> -->
+
+    <!-- <p>Welcome To my page</p>
+    
+    <p>Have a nice day</p>
+    <form id="first" action="Lec7.html">
+        Enter your name: <input type="text" name="fname">
+        <input type="submit" value="submit">
+    </form>
+    
+    
+    <script>
+        document.getElementById('first').onsubmit = function() {demo()};
+        function demo()
+        {
+            alert("Form uploaded successfully!");
+        }
+    </script> -->
+
+    <p>Add event listener</p>
+    <iframe id="myframe" src=https://nmims.edu/" frameborder="20"></iframe>
+    <p id="demo"></p>
+
+
+    <script>
+       document.getElementById('myframe').addEventListener("load",myfunction());
+
+       function myfunction()
+       {
+        document.getElementById('demo').innerHTML = "Iframe is Loaded";
+       }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regsitration Form</title>
+    <style>
+        legend 
+        {
+            padding: 5px 10px;
+        }
+        fieldset
+        {
+            display: inline-block;
+        }
+        body
+        {
+            font-family: 'Courier New', Courier, monospace;
+            font-size:12px
+        }
+        span
+        {
+            display:inline-block; 
+            width:15px; height:15px; 
+            line-height:15px; 
+            font-weight:bold; 
+            text-transform: capitalize;
+            vertical-align: baseline;
+        }
+        input
+        {
+            vertical-align: baseline;
+        }
+    </style>
+</head>
+<body align="center">
+    <fieldset>
+        <legend>Registration Form</legend>
+        <form action="/pracs/action.php" method="GET">
+            <span>name:</span>
+            <input type="text" name="name"> <br> <br>
+            Age: <input type="text" name="age"> <br> <br>
+            Gender: <input type="text" name="gender"> <br> <br>
+            SAP: <input type="text" name="sap"> <br> <br>
+            <input type="submit">
+        </form>
+    </fieldset>
+</body>
+</html>
+

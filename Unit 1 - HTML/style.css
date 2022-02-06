@@ -1,0 +1,105 @@
+form
+{
+    font-size: large;
+    max-width: 320px; 
+}
+
+p > label 
+{
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset 
+{
+    width : 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+input:invalid 
+{
+    box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid 
+{
+    box-shadow: none;
+}
+
+body
+{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    vertical-align: baseline;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .hr
+{
+    border-width:0;
+    color:red;
+    background-color:red;
+}
+
+.body
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+.row-top
+{
+    margin:0px 0px 0px;
+}
+
+.img
+{
+    height:100px;
+    width:400px;
+}
+
+.container
+{
+    background:#fff; 
+    padding:10px 0px 0px;
+}
+
+.mid-container
+{
+    font-size: medium;
+}
+
+.navbar
+{
+    text-align:right;
+} */

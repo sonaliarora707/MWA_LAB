@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 align="center">Student Registration Form</h2>
+<div>
+<div>
+<form>
+    <p>
+        <fieldset>
+            <legend>Personal Details</legend>
+            First Name: <input type="text" id="fname" required>
+            Last Name: <input type="text" id="lname" required>
+        </fieldset>
+    </p>
+    <p>
+      <fieldset>
+        <legend>General Details</legend>
+        <legend>Do you have a Driver's License?<abbr title="This field is mandatory" aria-label="required">*</abbr></legend>
+        <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label> <br>
+        <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+      </fieldset>
+    </p>
+    <p>
+      <label for="n1">What's your Age?</label>
+      <input type="number" min="12" max="120" step="1" id="n1" name="age"
+             pattern="\d+">
+    </p>
+    <p>
+      <label for="t1">Secret Question: Your favorite Fruit?<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+      <input type="text" id="t1" name="fruit" list="l1" required
+             pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+      <datalist id="l1">
+        <option>Banana</option>
+        <option>Cherry</option>
+        <option>Apple</option>
+        <option>Strawberry</option>
+        <option>Lemon</option>
+        <option>Orange</option>
+      </datalist>
+    </p>
+    <p>
+      <label for="t2">What's your e-mail address?</label>
+      <input type="email" id="t2" name="email">
+    </p>
+    <p>
+      <label for="t3">Leave a short message</label>
+      <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+    </p>
+    <p>
+      <button>Submit</button>
+    </p>
+  </form>
+</div>    
+</body>
+</html>
+
+
+<div class="field">
+						<label>
+							<span>HTML5 Regex</span>
+							<!--<input required="required" type="text" pattern='\d+' />-->
+							<input type="text" name="mySpecialInput" data-validate-length-range="2,6" required="required" placeholder="eg. 123456" pattern="alphanumeric"  data-validate-text-invalid='Please follow the pattern rules' />
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>This field uses HTML5 "pattern" attribute to be validated.<br /><em>"<strong>\d+</strong>" - only digits are allowed</em></p>
+							</div>
+						</div>
+					</div>
+
+          <div class="field">
+						<label>
+							<span>Multiple emails</span>
+							<input name="email-multi" required="required" type="email" multiple />
+						</label>
+					</div>
+
+          <label>
+							<span>Time</span>
+							<input class='time' type="time" name="time" required='required'>
+							<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Format should be: XX:XX</p>
+							</div>
+						</div>
+						</label>
+
+            <label for='multi_first'>
+							<span>Multifield</span>
+						</label>
+						<div class='input'>
+							<input type="text" name="multi1" maxlength='4' id='multi_first'>
+							<input type="text" name="multi2" maxlength='4'>
+							<input type="text" name="multi3" maxlength='4'>
+							<input type="text" name="multi4" maxlength='4'>
+							<input type="text" name="multi5" maxlength='4'>
+							<input type="text" name="multi6" maxlength='4'>
+							<input data-validate-length-range="24" data-validate-pattern="alphanumeric" id="serial" name="serial" type="hidden" required='required' />
+						</div>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>This is a multifield, which let the user input a serial number or credit card number for example, and the trick is to validate the combined result, which is stored in a hidden field</p>
+							</div>
+						</div>
+
+            <fieldset>
+					<p>
+						There is a hidden "required" form field below, notice it will not be validated due to its lack of visibility.<br>
+						The reason for this is that sometimes there is a section in a form that is not visible until some user "action" is taken,
+						and changing form fields to be "required" on-the-fly is undesirable.
+					</p>
+					<input name="somethingHidden" required="required" type="text" style='display:none' />
+				</fieldset>
+
+
+
+				<label>
+							<span>Checkbox</span>
+							<input type="checkbox" />
+							<span>Optional Checkbox</span>
+						</label>
+					</div>
+					<div class="field">
+						<label>
+							<span>File upload</span>
+							<input type='file' required>
+						</label>
+
+
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>The Email ID should be in the form of johndoe@example.com.<br /></p>
+							</div>
+
+							<span class='extra'>(optional)</span>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Using HTML & CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" />
+    <link rel="stylesheet" href="login.css">
+    
+</head>
+<body>
+   
+    <div nav="nav.html"></div>
+    <script type="text/javascript" src="main.js"></script>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("nav");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("nav");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+
+<div class="bg-img">
+  <div class="content">
+    <header>SignUp Form</header>
+     <form action="" method="POST">
+      <div class="field">
+        <span class="fa fa-user"></span>
+        <input type="text" required placeholder="Email or Phone">
+      </div>
+      <div class="field space">
+        <span class="fa fa-lock"></span>
+        <input type="password" class="pass-key" required placeholder="Password">
+        <span class="show">SHOW</span>
+      </div>
+      <div class="field space">
+        <span class="fa fa-lock"></span>
+        <input type="re-password" class="pass-key" required placeholder="Re-Password">
+        <span class="show">SHOW</span>
+      </div>
+      <div class="pass">
+        <a href="#"></a>
+      </div>
+      <br>
+      
+
+      
+
+      <div class="field">
+        <input type="submit" value="LOGIN">
+      </div>
+    </form>
+    <div class="login">Or SignUp with</div>
+    <div class="links">
+      <div class="facebook">
+        <i class="fab fa-facebook-f"><span>Facebook</span></i>
+      </div>
+      <div class="instagram">
+        <i class="fab fa-instagram"><span>Instagram</span></i>
+      </div>
+    </div>
+    <div class="signup">Don't have an account?
+      <a href="FormValidate.html">Register</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script>
+includeHTML();
+</script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<footer id="main-footer">
+    <div class="footer-content container">
+        <p>
+        </p>
+        <div class="social">
+            <a href="" target="__blank"  style="color: #fff;">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="" target="__blank"  style="color: #fff;">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            
+            <a href="" target="__blank"  style="color: #fff;">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="" target="__blank"  style="color: #fff;">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+echo "Read Single Character"."<br>"
+        while(!feof($myfile))
+        {
+            echo fgetc($myfile);
+        }
+
+        fclose($myfile);

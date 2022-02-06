@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+  	<link rel="stylesheet" href="fv.css" type="text/css" />
+</head>
+<body>
+	<div id='wrap'>
+		<img src="nmims.png" alt="NMIMS Logo" width="400px">
+		<br>
+		<br>
+		<h1 title='Login'>Login Form</h1>
+		<section class='form'>
+			<form action="loginvalidate.php" method="get" onsubmit="validateform()">
+				<fieldset>
+					<div class="field">
+						<label>
+							<span>username</span>
+							<!-- data-validate-length-range="30" data-validate-words="20"  -->
+							<input data-validate-words="1" name="name" placeholder="ex. JohnF.Kennedy@1098" required="required" />
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Username should be vaild</p>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>
+							<span>password</span>
+							<!-- data-validate-length-range="30" data-validate-words="20"  -->
+							<input data-validate-words="1" name="password" placeholder="ex. Kennedy@1098" required="required" />
+						</label>
+						<div class='tooltip help'>
+							<span>?</span>
+							<div class='content'>
+								<b></b>
+								<p>Password should be valid</p>
+							</div>
+						</div>
+					</div>
+                <br>
+                <br>
+				<button type='submit'>Submit</button>
+                <button type ="reset">Reset </button>
+                <br>
+                <br>
+                <div class="content">
+                    <span>Don't have account?</span> 
+                    <a href="FormValidate.html">Signup Now</a>
+                  </div>
+			</form>
+		</section>
+	</div>
+
+
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="multifield.js"></script>
+    <script src="validator.js"></script>
+	<script>
+		
+		var validate = new FormValidator({"events" : ['blur', 'paste', 'change']}, document.forms[0]);
+
+		validate.texts.mySpecialInput = "Wrong Input" 
+
+       
+		document.forms[0].onsubmit = function(e){
+			var submit = true,
+					ValidateResult = validate.checkAll(this);
+
+			console.log(ValidateResult);
+			return !!ValidateResult.valid;
+		}
+
+		
+		document.forms[0].onreset = function(e)
+		{
+				validate.reset();
+		}
+
+        
+		$('.toggleValidationTooltips').change(function()
+		{
+
+			validate.settings.alerts = !this.checked;
+
+			if( this.checked )
+				$('form .alert').remove();
+
+		}).prop('checked',false);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <?php
+$file = fopen("test.txt","r");
+while (! feof($file)) {
+  echo fgetc($file);
+  }
+fclose($file);
+?>
+
+</body>
+</html>
