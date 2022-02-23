@@ -1,0 +1,61 @@
+<!-- id selector  <!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("button").click(function(){
+        $("#test").hide();
+    });
+    });
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p id="test">This is another paragraph.</p>
+
+<button>Click me</button>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<title>jQuery Programs</title>
+<script>
+    $(document).ready(function(){
+    $("button").click(function(){
+        $("ul li:nth-child(2)").hide();
+    });
+    });
+</script>
+</head>
+<body>
+    <p>List 1</p>
+    <ul>
+        <li>coffee</li>
+        <li>milk</li>
+        <li>tea</li>
+    </ul>
+
+    <p>list 2</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+<button> Click me </button>
+
+</body>
+</html>

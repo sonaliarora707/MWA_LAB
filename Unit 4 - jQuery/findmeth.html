@@ -1,0 +1,90 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function fun()
+        {
+            $(document).ready(function()
+            {
+                $("#div1").find("ul").css({"font-size": "30px","color":"blue","border":"6px dashed blue"});
+            });
+        }
+    </script>
+</head>
+<style>
+    .main *
+    {
+        display: block;
+        font-size: 20px;
+        position: relative;
+        border: 2px solid black;
+        color: black;
+        padding: 10px;
+        margin: 17px;
+    }
+</style>
+<body class="main">
+    <div id="div1"> div1
+    <div> div2
+        <ul> ul
+            <h2>Heading H2</h2>
+            <ul>
+                <p>Pargraph Element</p>
+            </ul>
+        </ul>
+
+    </div>
+
+    </div>
+<button onclick="fun()">click ME</button>
+</body>
+</html> -->
+
+<!-- find() will give list of all descendent elements 
+    children() value given at first level -->
+
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function fun()
+            {
+                $(document).ready(function()
+                {
+                    $("#div1").children().css({"font-size": "30px","color":"blue","border":"6px dashed blue"});
+                });
+            }
+        </script>
+    </head>
+    <style>
+        .main *
+        {
+            display: block;
+            font-size: 20px;
+            position: relative;
+            border: 2px solid black;
+            color: black;
+            padding: 10px;
+            margin: 17px;
+        }
+    </style>
+    <body class="main">
+        <div id="div1"> div1
+        <div> div2
+            <ul> ul
+                <h2>Heading H2</h2>
+                <ul>
+                    <p>Pargraph Element</p>
+                </ul>
+            </ul>
+    
+        </div>
+    
+        </div>
+    <button onclick="fun()">click ME</button>
+    </body>
+    </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+    $("button").click(function(){
+        $("p").css({"background-color": "yellow", "font-size": "200%"});
+        $("h2").css({"background-color": "blue", "font-size": "200%"});
+        $("table").css({"background-color": "green", "font-size": "200%"});
+        $("tr:even").css("background-color", "yellow");
+        $("tr:odd").css("background-color", "violet");
+        
+
+
+        });
+    });
+
+    </script>
+</head>
+<body>
+
+    <h1>Change Style of the Paragraphs, Table, Heading</h1>
+
+    <h2> Let's Start</h2>
+
+    <p style="background-color:#ff0000">This is a paragraph.</p>
+    <p style="background-color:#00ff00">This is a paragraph.</p>
+    <p style="background-color:#0000ff">This is a paragraph.</p>
+
+    <p>This is a paragraph.</p>
+
+    <table border="1">
+        <tr>
+        <th>Company</th>
+        <th>Contact</th> 
+        <th>Country</th>
+        </tr>
+        <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td> 
+        <td>Germany</td>
+        </tr>
+        <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td> 
+        <td>Mexico</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+      </ul>
+      
+      <p>List 2:</p>
+      <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+      </ul>
+    <button>Change Styles</button>
+
+</body>
+</html>
+

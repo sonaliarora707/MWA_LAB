@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                jQuery.ajax({
+                    url: 'wrapFunc.html',
+                    type: 'GET',
+                    success: function(data){
+                        $("#para").html(data);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Example of using jQuery's ajax</h3>
+    <h4>Clcik on following button to see the effect</h4>
+    <button>click ME</button>
+    <p id="para"></p>
+</body>
+</html>
+
+
+<!-- AJAX Asynchronous Javascript and XML -->
