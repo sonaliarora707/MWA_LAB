@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        .form-wrapper {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form button {
+            padding: calc(var(--padding) * 0.5) var(--padding);
+            font-weight: 400;
+            border-radius: inherit;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            background-color: var(--main-color);
+            border: none;
+        }
+        #msg {
+            font-size: 1rem;
+            font-style: italic;
+            color: red;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <video playsinline autoplay muted loop class="banner-video" src="https://themes.fourthwall.com/themes/assets/11d2f253-34b7-4fdc-b01b-17868cd74972/assets/video-bg-light.mp4?v=364d6351-2cdd-8622-b962-d429a0989974" type="video/mp4" style="height: 100%; filter: invert(1);"></video>
+    
+    <!-- Navigation bar -->
+   <div class="topnav">
+    <img src="" alt="logo" srcset="">
+    <ul>
+         <li><a href="/Website.html">Home</a></li>
+         <li><a href="#">Events</a></li>
+         <li><a href="#">Blog</a></li>
+         <li><a href="#">About</a></li>
+     </ul>
+     <a href="SignUp.html" style="position: absolute; right: 50px; opacity: 0.75" target="_blank">Sign Up</a>
+    </div>
+
+    <div class="form-wrapper" style="margin: 75px auto">
+        <form id="LoginForm" action="http://localhost/MWA%20-%20PHP/Login.html" method="get">
+
+            <h1>Login</h1><br><br>
+
+            <input name="user" id="user" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br><br>
+
+            <input type="password" name="pass" id="pass" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'">            
+            
+            <br><br><br>
+
+            <button onclick="login()">Login</button>
+            
+            <spam id="msg"></spam>
+
+            <a href="Website.html" style="color: silver; font-family: monospace"><sub><br><br>Return to homepage</sub></a>
+
+        </form>
+    </div>
+
+    <!-- Footer --> 
+    <footer class="footer">
+        <div class="contact">
+            <b>Email:</b>
+            <a href="mailto: test@website.com" style="color: inherit; text-decoration: none;">test@website.com</a><br><br>
+        </div>
+    </footer>
+    
+    <script>
+        
+        function login() {
+            var x = document.forms["LoginForm"];
+            var user = x.user.value;
+            var pass = x.pass.value;
+            var pat1 = /["admin"]/g;
+            var result = user.match(pat1);
+            if(!result)
+            {
+                document.getElementById("msg").innerHTML = "<br><br>Invalid username or password";
+                alert("Invalid username or password");
+                event.preventDefault();
+                window.history.back;
+            }
+            else if(pass == null || pass == "")
+            {
+                document.getElementById("msg").innerHTML = "<br><br>Password cannot be empty";
+                event.preventDefault();
+                window.history.back;
+            }
+            else if(pass != "admin")
+            {
+                document.getElementById("msg").innerHTML = "<br><br>Invalid username or password";
+                event.preventDefault();
+                window.history.back;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

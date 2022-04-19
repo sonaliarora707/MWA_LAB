@@ -1,0 +1,73 @@
+function increment()
+        {
+            count++;
+            // document.getElementByID("demo").innerHTML = count;
+            console.log(count);
+        }
+
+        function decrement()
+        {
+            count--;
+            // document.getElementByID("demo").innerHTML = count;
+            console.log(count);
+        }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Increment and Decrement Counter</title>
+    <script>
+        var num = 0;
+        const checkbox = document.getElementById('cb_enabled'),
+        increment = document.getElementById('btn_increment'),
+        decrement = document.getElementById('btn_decrement'),
+        counter = document.getElementById('js-counter');
+
+        checkbox.addEventListener("change", function(checkbox) {
+
+        if (this.checked === false) {
+            increment.disabled = true;
+            decrement.disabled = true;
+        } else {
+            increment.disabled = false;
+            decrement.disabled = false;
+        }
+        });
+
+        increment.onclick = () => {
+        const num = parseInt(counter.innerHTML);
+        counter.innerHTML = num + 1;
+        }
+
+        decrement.onclick = () => {
+        const num = parseInt(counter.innerHTML);
+        counter.innerHTML = num - 1;
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="js-counter"> 0 </h1>
+    <button id="btn_decrement" type="button"> Decrement </button>
+    <button id="btn_increment" type="button"> Increment </button>
+    
+    <label for="cb_enabled">
+      Enable/Disable counter
+      <input id="cb_enabled" type="checkbox" checked />
+    </label>
+</body>
+</html>\
+\
+
+
+<li class="form-control">
+                            <input type="text" id="txtbox" placeholder="Email">
+                        </li>
+                        <li>
+                            <input type="text" id="txtbox" placeholder="Password">
+                        </li>
+
+<div class="form-control">
+                        <label for="emailID">Email Address</label>
+                        <input type="email" class="form-text text-muted">
+                    </div>

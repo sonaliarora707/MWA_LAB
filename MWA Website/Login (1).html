@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrator</title>
+
+    <style>
+        :root {
+            --bg-color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .banner {
+            width: 100vw;
+            height: 25vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-color);
+            color: white;
+        }
+
+        .banner h1 {
+            font-size: 3.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 3px;
+        }
+
+        .content {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 50px auto;
+            min-height: 50vh;
+        }
+
+        .content-1 {
+            height: fit-content;
+            width: 100%;
+            text-align: center;
+            background-color: silver;
+        }
+
+        form::placeholder {
+            opacity: 0.5;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 1rem;
+            border: 1px solid black;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 50px;
+            border-radius: 1rem;
+            border: 2px solid silver;
+        }
+
+        button:hover {
+            filter: invert(1);
+        }
+
+        span {
+            text-align: center;
+        }
+
+        table, th, td {
+            border: 2px solid black;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+
+        table {
+            margin: 50px auto;
+        }
+
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #btn-del-all {
+            background-color: red;
+            color: white;
+        }
+
+        form #btn-del-all:hover {
+            filter: invert(0);
+            background-color: maroon;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="banner">
+        <h1>Administrator Dashboard</h1>
+    </div>
+
+    <div class="content-1">
+        <button onclick="showall()">Show all records</button>
+        <button onclick="add_record()">Add record</button>
+        <button onclick="delete_record()">Delete records</button>
+        <button onclick="update_records()">Update records</button>
+    </div>
+
+    <div class="content">
+
+        <span id="all records" style="display: block;">
+            <?php
+                $conn = new mysqli("localhost", "username", "password", "MWA project");
+
+                if($conn->connect_error)
+                {
+                    die("Cannot connect");
+                }
+
+                $sql = "SELECT * FROM students";
+                $result = $conn->query($sql);
+            ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SAP</th>
+                        <th>Name</th>
+                        <th>School</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
+                        if($result->num_rows > 0)
+                        {
+                            while($row = mysqli_fetch_assoc($result))
+                            {
+                                echo "<tr><td>{$row["SAP"]}</td><td>{$row["Name"]}</td><td>{$row["School"]}</td></tr>\n";
+                            }
+                        }
+                        else
+                        {
+                            echo "<tr><td colspan='3'>No records in database</td></tr>";
+                        }
+                    ?>
+
+                </tbody>
+            </table>
+        </span>
+
+        <span id="add_record" style="display: none;">
+            <br><br><br><br>
+            <form action="http://localhost/MWA%20-%20PHP/add_record.php" method="get">
+            
+                <input name="name" id="name" type="text" placeholder="Full name*" onfocus="this.placeholder=''" onblur="this.placeholder='Full name*'" required>
+                <br><br>
+            
+                <input name="SAP" id="SAP" type="number" placeholder="SAP ID*" onfocus="this.placeholder=''" onblur="this.placeholder='SAP ID*'" min="1000" max="9999" required>
+                <br><br>
+            
+                <select name="school" id="school" required>
+                    <option hidden disabled selected value> -- Select your School -- </option>
+                    <option value="STME" selected>STME</option>
+                    <option value="SBM">SBM</option>
+                    <option value="SoC">SoC</option>
+                    <option value="SoL">SoL</option>
+                    <option value="SoHM">SoHM</option>
+                </select>
+                <br><br>
+            
+                <input name="age" type="number" id="age" min="18" max="25" placeholder="Age*" onfocus="this.placeholder=''"
+                    onblur="this.placeholder='Age*'" style="text-align: center;" required>
+                <br><br>
+            
+                <input name="email" id="email" type="email" placeholder="College Email*" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'College Email*'" value="someone@somesite.com" required>
+                <br><br><br>
+            
+                <button type="submit">Add record</button>
+            
+            </form>
+        </span>
+
+        <span id="delete_records" style="display: none;">
+                <?php
+                    $conn = new mysqli("localhost", "username", "password", "MWA project");
+
+                    if($conn->connect_error)
+                    {
+                        die("Cannot connect");
+                    }
+
+                    $sql = "SELECT * FROM students";
+                    $result = $conn->query($sql);
+                ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SAP</th>
+                        <th>Name</th>
+                        <th>School</th>
+                        <!-- <th style="width: 50px"></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+        
+                    <?php
+                        if($result->num_rows > 0)
+                        {
+                            while($row = mysqli_fetch_assoc($result))
+                            {
+                                echo "<tr><td>{$row["SAP"]}</td><td>{$row["Name"]}</td><td>{$row["School"]}</td></tr>\n";
+                            }
+                        }
+                        else
+                        {
+                            echo "<tr><td colspan='3'>No records in database</td></tr>";
+                        }
+                    ?>
+        
+                </tbody>
+            </table>
+
+            <br>
+
+            <form action="http://localhost/MWA%20-%20PHP/delete_record.php" method="get" target="_blank">
+                <label>Enter SAP for record to be deleted : </label>
+                <input id="SAP" name="SAP" type="number" min="1000" max="9999" style="padding: 10px" required><br><br>
+                <button type="submit">Delete record</button>
+            </form>
+
+            <form action="http://localhost/MWA%20-%20PHP/delete_all_records.php" target="_blank">
+                <button id="btn-del-all" type="submit">Delete all records</button>
+            </form>
+
+            <br><br>
+        </span>
+
+        <span id="update_records" style="display: none;">
+            <?php
+                $conn = new mysqli("localhost", "username", "password", "MWA project");
+
+                if($conn->connect_error)
+                {
+                    die("Cannot connect");
+                }
+
+                $sql = "SELECT * FROM students";
+                $result = $conn->query($sql);
+            ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SAP</th>
+                        <th>Name</th>
+                        <th>School</th>
+                        <!-- <th style="width: 50px"></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+        
+                    <?php
+                        if($result->num_rows > 0)
+                        {
+                            while($row = mysqli_fetch_assoc($result))
+                            {
+                                echo "<tr><td>{$row["SAP"]}</td><td>{$row["Name"]}</td><td>{$row["School"]}</td></tr>\n";
+                            }
+                        }
+                        else
+                        {
+                            echo "<tr><td colspan='3'>No records in database</td></tr>";
+                        }
+                    ?>
+        
+                </tbody>
+            </table>
+        
+            <br>
+        
+            <form action="http://localhost/MWA%20-%20PHP/update_record.php" method="get" target="_blank">
+                <label>Enter SAP for record to be updated : </label>
+                <input id="SAP" name="SAP" type="number" style="padding: 10px" min="1000" max="9999" required><br><br>
+                <label>Enter new name : </label>
+                <input id="Name" name="Name" type="text" style="padding: 10px" required><br><br>
+                <button type="submit">Update record</button>
+            </form>
+        
+            <br><br>
+        </span>
+        
+    </div>
+
+    <script>
+
+        function showall() {
+            var x = document.getElementById("delete_records");
+            x.style.display = 'none';
+            x = document.getElementById("update_records");
+            x.style.display = 'none';
+            x = document.getElementById("add_record");
+            x.style.display = 'none';
+            x = document.getElementById("all records");
+            x.style.display = 'block';
+        }
+
+        function add_record() {
+            var x = document.getElementById("all records");
+            x.style.display = 'none';
+            x = document.getElementById("add_record");
+            x.style.display = 'block';
+            x = document.getElementById("delete_records");
+            x.style.display = 'none';
+            x = document.getElementById("update_records");
+            x.style.display = 'none';
+        }
+
+        function delete_record() {
+            var x = document.getElementById("all records");
+            x.style.display = 'none';
+            x = document.getElementById("add_record");
+            x.style.display = 'none';
+            x = document.getElementById("delete_records");
+            x.style.display = 'block';            
+            x = document.getElementById("update_records");
+            x.style.display = 'none';
+        }
+
+        function update_records() {
+            var x = document.getElementById("all records");
+            x.style.display = 'none';
+            x = document.getElementById("add_record");
+            x.style.display = 'none';
+            x = document.getElementById("delete_records");
+            x.style.display = 'none';
+            x = document.getElementById("update_records");
+            x.style.display = 'block';
+        }
+
+        function myFunction() {
+            // alert(this.name.value);
+            var inpObj = document.getElementById("SAP");
+            if(!inpObj.checkValidity())
+            {
+                alert("SAP invalid");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunc()
+        {
+            var string1 = document.getElementById("box").value;
+            var pattern = /\d+/g;
+            var result = string1.match(pattern);
+            if(isNaN(string1) == true)
+            {
+                document.getElementById("demo").innerHTML = "True";
+            }
+            else
+            {
+                document.getElementById("demo").innerHTML = "False";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h3>JavaScript Code to find Digit in string</h3>
+    Input String: <input type="text" name="text1" id="box">
+    <button onclick="myFunc()">Click Me!</button>
+    <h3>Result:</h3>
+    <p id="demo"></p>
+</body>
+</html>

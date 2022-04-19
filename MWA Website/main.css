@@ -1,0 +1,397 @@
+/* --------------------------------------------- */
+/* ------------- Reset all styling -------------  */
+/* --------------------------------------------- */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+img{
+    margin: 0;
+	padding: 20px 20;
+	border: 0;
+    size: 20px;
+	/* font-size: 100%; */
+	/* font: inherit; */
+	vertical-align: baseline;
+}
+
+h3{
+    margin: 0;
+	padding: 0 30px;
+	border: 0;
+    font-size: 100px;
+    font-style: oblique;
+    color: beige;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------------------------------- */
+/* ------------- Reset ends ------------- */
+/* -------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/* ------------- CSS Global Styling ------------- */
+/* ---------------------------------------------- */
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: bisque;
+    background-color: black;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+:root {
+    --padding: 1rem;
+    --main-color: wheat;
+    --alt-color: whitesmoke;
+    --accent: purple;
+}
+
+sub {
+    font-size: 0.75rem;
+}
+
+.banner-wrapper {
+    /* border: 5px solid red; */
+
+    height: 300px;
+    overflow: hidden;
+}
+
+.banner{
+    /* border: 5px solid red; */
+    width: 100%;
+    /* height: min(15vw, 20rem); */
+    height: 20rem;
+    min-height: 15rem;
+    
+    display: flex;
+}
+
+.banner-video {
+    /* border: 5px solid blue; */
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    /* attachment: fixed; */
+    z-index: -1;
+    /* overflow: hidden; */
+}
+
+.banner-title{
+    /* border: 2px solid green; */
+    
+    width: 100vw;
+    margin: auto;
+    
+    /* color: #eee; */
+    color: black;
+    /* color: var(--accent); */
+
+    font-weight: 500;
+    font-size: max(5rem, 7.5vw);
+    font-family: 'Courier New';
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+    /* text-shadow: 0 0 100px white, 1px 1px 20px white, 0 0 10px white, 0 0 1px white;  */
+    text-shadow: 0 0 15px blue;
+}
+
+.banner-title sup {
+    font-size: 25%;
+    font-weight: 600;
+    vertical-align: text-top;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.content-wrapper {
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* height: 120vh; */
+}
+
+.content {
+    /* border: 3px solid salmon; */
+
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 1000px;
+    padding: 10%;
+}
+
+article {
+    /* border: 2px solid yellow; */
+
+    height: max-content;
+    margin: auto;
+
+    color: var(--main-color);
+    font-size: 1.25rem;
+    padding: var(--padding);
+}
+
+article span {
+    font-size: 1.5rem;
+}
+
+.topnav {
+    /* border: 5px solid brown; */
+
+    background-color: #222;
+    display: flex;
+
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--main-color);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1;
+}
+
+.topnav img {
+    position: absolute;
+    left: 50px;
+    /* color: red; */
+}
+
+.topnav a {
+    text-decoration: none;
+    
+    color: inherit;
+}
+
+.topnav li {
+    /* border: 2px solid blue; */
+
+    padding: var(--padding);
+    margin: 0 var(--padding);
+
+    display: inline-block;
+    color: inherit;
+}
+
+.topnav li:hover {
+    background-color: var(--main-color);
+    filter: brightness(0.9);
+}
+
+.topnav li:hover a {
+    color: black;
+}
+
+footer{
+    /* border: 3px solid hotpink; */
+
+    height: max-content;
+    padding: var(--padding);
+
+    text-align: center;
+    color: var(--alt-color);
+    /* color: whitesmoke; */
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@media screen and (max-width: 400px) {
+    .banner-title {
+        font-size: 3.5rem;
+    }
+
+    .topnav {
+        width: 100%;
+    }
+
+    .topnav ul li {
+        display: block;
+    }
+}
+
+
+/* ========================================== */
+/* =============== Sign Up ================== */
+/* ========================================== */
+
+form {
+    /* border: 2px solid blue; */
+    /* border: 3px dashed var(--main-color); */
+    border-radius: 15px;
+
+    color: var(--alt-color);
+    width: 50%;
+    text-align: center;
+    padding: calc(var(--padding) * 5);
+    font-size: 1.5rem;
+
+    display: table;
+    column-count: 2;
+
+    backdrop-filter: blur(3px);
+    background-color: hsla(360, 100%, 100%, 10%);
+    box-shadow: 0 0 100px rgba(365, 365, 365, .5);
+}
+
+form > * > * {
+    margin: calc(var(--padding) * .5);
+    /* border: 2px solid red; */
+}
+
+form h1 {
+    font-size: 3rem;
+    color: var(--main-color);
+    text-align: center;
+    padding: var(--padding);
+}
+
+form input {
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid var(--alt-color);
+    padding: 10px;
+    font-size: 1rem;
+    color: var(--alt-color);
+
+    background-color: transparent;
+}
+
+form input:focus {
+    border-bottom: 3px solid var(--main-color);
+}
+
+form input::placeholder {
+    color: whitesmoke;
+    opacity: 0.5;
+}
+
+form select {
+    font-size: 1rem;
+    padding: 5px;
+    background-color: rgba(365, 365, 365, 0);
+    border: 0.5px solid var(--main-color);
+    border-radius: inherit;
+    padding: 10px;
+    color: wheat;
+    opacity: 0.8;
+}
+
+form select:focus,
+form select:focus::after {
+    opacity: 1;
+}
+
+form select option,
+form select option > * {
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.8;
+}
+
+form input[type="checkbox"] {
+    vertical-align: text-top;
+    width: 15px;
+    height: 15px;
+}
+
+form sub {
+    font-size: 0.8rem;
+}
+
+form button[type="submit"] {
+    /* color: var(--accent); */
+    padding: calc(var(--padding) * 0.5) var(--padding);
+    font-weight: 400;
+    border-radius: inherit;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    border: none;
+}
+
+form button[type="submit"]:hover {
+    box-shadow: 0 0 10px var(--main-color);
+    /* transform: scale(1.0); */
+    /* box-shadow: 0 0 10px red; */
+}
+
+form sub {
+    font-size: small;
+    vertical-align: center;
+}
+
+@media screen and (max-width: 400px) {
+    form {
+        width: 100%;
+        margin: 50px;
+    }
+}

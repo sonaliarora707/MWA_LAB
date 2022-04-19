@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sign Up</title>
+    
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        .form-wrapper {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <video playsinline autoplay muted loop class="banner-video" src="https://themes.fourthwall.com/themes/assets/11d2f253-34b7-4fdc-b01b-17868cd74972/assets/video-bg-light.mp4?v=364d6351-2cdd-8622-b962-d429a0989974" type="video/mp4" style="height: 100%; filter: invert(1);"></video>
+    
+    <!-- Navigation bar -->
+   <div class="topnav">
+    <!-- <a href="#" class="logo">logo</a></li> -->
+    <img src="" alt="logo" srcset="">
+    <ul>
+         <li><a href="/Website.html">Home</a></li>
+         <li><a href="#">Events</a></li>
+         <li><a href="#">Blog</a></li>
+         <li><a href="#">About</a></li>
+     </ul>
+     <a href="SignUp.html" style="position: absolute; right: 50px; opacity: 0.75" target="_blank">Sign Up</a>
+    </div>
+
+    <div class="form-wrapper" style="margin: 75px auto">
+        <form id="SignUpForm" action="http://localhost/MWA%20-%20PHP/SignUp.php" method="get">
+
+            <h1>Sign Up</h1><br><br>
+
+            <input name="name" id="name" type="text" placeholder="Full name*" onfocus="this.placeholder=''" onblur="this.placeholder='Full name*'" value="Paris" required>
+            <br><br>
+
+            <input name="SAP" id="SAP" type="text" placeholder="SAP ID*" onfocus="this.placeholder=''" onblur="this.placeholder='SAP ID*'" minlength="4" maxlength="4" value="0123">
+            <br><br>
+
+            <select name="school" id="school" required>
+                <option hidden disabled selected value> -- Select your School -- </option>
+                <option value="STME" selected>STME</option>
+                <option value="SBM">SBM</option>
+                <option value="SoC">SoC</option>
+                <option value="SoL">SoL</option>
+                <option value="SoHM">SoHM</option>
+            </select>
+            <br><br>
+
+            <input name="age" type="number" id="age" min="18" max="25" placeholder="Age*" onfocus="this.placeholder=''" onblur="this.placeholder='Age*'" style="text-align: center;" value="18">
+            <br><br>
+
+            <input name="email" id="email" type="email" placeholder="College Email*" onfocus="this.placeholder = ''" onblur="this.placeholder = 'College Email*'" value="someone@somesite.com">
+            <br><br><br>
+
+            <!-- <label for="agreement">
+            <input type="checkbox" name="agreement" id="agreementCheckbox" checked required>
+                <sub>I agree to receive occasional updates on upcoming events from Manthan Club. </sub>
+                <br><br><br>
+            </label> -->
+
+            <button type="submit">Sign Up</button>
+
+            <a href="Website.html" style="color: silver; font-family: monospace"><sub><br><br>Return to homepage</sub></a>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="contact">
+            <b>Email:</b>
+            <a href="mailto: test@website.com" style="color: inherit; text-decoration: none;">test@website.com</a><br><br>
+        </div>
+        <!-- <div class="newsletter">
+            <a href="SignUp.html" style="text-decoration: underline; color: hotpink" target="_blank">Sign up</a> for newsletter
+        </div> -->
+    </footer>
+    
+    <script>
+        
+        // function validateform() {
+        //     var x = document.forms["SignUpForm"];
+
+        //     var name = x.name.value;
+        //     var SAP = x.SAP.value;
+        //     var age = x.age.value;
+
+        //     // alert(age);            
+
+        //     // alert("Dear" + " " + x.name.value + ",\n\nYou have been registered!" + "\n\n\nWelcome to Manthan Club!");
+        // }
+
+    </script>
+
+</body>
+
+</html>
